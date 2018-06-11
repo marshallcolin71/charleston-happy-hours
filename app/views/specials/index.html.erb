@@ -1,0 +1,26 @@
+
+<div>
+  <%= link_to "Add new Happy Hour", new_special_path, class: 'btn btn-success' %>
+</div>
+<h1 class="text-center">All Happy Hour Specials</h1>
+
+<div class="container-fluid">
+<% @specials.each do |special| %>
+    <div class="row restaurant-specials">
+      <div class="col-md-4" >
+        <%= image_tag(special.image.url(:thumb), class: "media-object") %>
+      </div>
+      <div class="col-md-8">
+        <h2 class="restaurant-name"><%= link_to special.name, special %></h2>
+        <p><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span><%= special.street %>,
+          <%= special.city %>, <%= special.state %>, <%= special.zip %></p>
+        <p><span class="glyphicon glyphicon-phone" aria-hidden="true"> <%= special.phone %></p>
+        <p><span class="glyphicon glyphicon-new-window" aria-hidden="true">
+          <%= link_to nil, "http://#{special.url}", target: "_blank" %></p>
+        <p>Happy Hour: <br> <%= special.happy_hour %></p>
+        <p class="happy">Happy Hour Food: <br> <%= special.happyhour_food %></p>
+        <p class="happy">Happy Hour Drinks: <br> <%= special.happyhour_drink %></p>
+      </div>
+    </div>
+  <% end %>
+</div>

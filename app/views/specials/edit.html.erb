@@ -1,0 +1,45 @@
+<div>
+  <%= link_to "Specials", specials_path(@special), class: 'btn btn-success' %>
+</div>
+
+<h1>Edit <%= @special.name %></h1>
+<div class="row">
+  <div class="col-md-8">
+    <%= form_for @special do |f| %>
+      <%= f.label :image %>
+      <%= f.file_field :image, class: 'form-control'%>
+      <%= f.submit 'Upload', class: 'btn btn-primary' %>
+
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %>
+      <%= f.label :street %>
+      <%= f.text_field :street, class: 'form-control' %>
+
+      <%= f.label :city %>
+      <%= f.text_field :city, class: 'form-control' %>
+
+      <%= f.label :state %>
+      <%= f.text_field :state, class: 'form-control' %>
+
+      <%= f.label :zip %>
+      <%= f.text_field :zip, class: 'form-control' %>
+
+      <%= f.label :phone %>
+      <%= f.text_field :phone, class: 'form-control' %>
+
+      <%= f.label :Website %>
+      <%= f.text_field :url, class: 'form-control' %>
+
+      <%= f.label :happy_hour %>
+      <%= f.text_field :happy_hour, class: 'form-control' %>
+
+      <%= f.label :happyhour_food %>
+      <%= f.text_area :happyhour_food, rows: 10, class: 'form-control' %>
+
+      <%= f.label :happyhour_drink %>
+      <%= f.text_area :happyhour_drink, rows: 10, class: 'form-control' %>
+
+      <%= f.submit "Save", class: 'btn btn-success' %>
+    <% end %>
+  </div>
+</div>

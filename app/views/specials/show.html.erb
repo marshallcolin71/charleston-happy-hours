@@ -1,0 +1,24 @@
+<div>
+  <%= link_to "Specials", specials_path(@special), class: 'btn btn-success' %>
+</div>
+<div class="container">
+  <h1><%= @special.name %></h1>
+  <div>
+    <%= image_tag(@special.image.url, class: "media-object") %>
+ </div>
+  </div>
+  <div>
+    <p><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span><%= @special.street %>,
+      <%= @special.city %>, <%= @special.state %>, <%= @special.zip %></p>
+    <p><span class="glyphicon glyphicon-phone" aria-hidden="true"><%= @special.phone %></p>
+    <p><span class="glyphicon glyphicon-new-window" aria-hidden="true">
+       <%= link_to nil, "http://#{@special.url}", target: "_blank" %></p>
+    <p>Happy Hour: <br> <%= @special.happy_hour %></p>
+    <p>Happy Hour Food: <br> <%= @special.happyhour_food %></p>
+    <p>Happy Hour Drinks: <br> <%= @special.happyhour_drink %></p>
+  <div>
+    <div>
+    <%= link_to "Edit", edit_special_path(@special), class: 'btn btn-success' %>
+    <%= link_to "Delete", @special, method: :delete, class: 'btn btn-danger', data: {confirm: 'Zarli, are you sure about this?'}  %>
+  </div>
+</div>
